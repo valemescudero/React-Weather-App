@@ -39,7 +39,8 @@ function App() {
   return (
     <div className="App">
       <main>
-      <div id="background" className={weather.weather[0].main}>
+      <div id="background" className={
+        (typeof weather.main != "undefined") ? `${weather.weather[0].main}`.toLowerCase() : "clear"}>
         <div id="wrapper">
           <div className="container container-fluid">
             <div className="cols search">
@@ -61,38 +62,42 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="cols">
-              <div className="col help">
-                <p>Example - London, GB</p>
+            {(typeof weather.main != "undefined") ? (
+              <div className="wrap">
+                <div className="cols">
+                  <div className="col help">
+                    <p>Example - London, GB</p>
+                  </div>
+                </div>
+                <div className="cols location">
+                  <div className="col">
+                    <h2 className="currentlocation">{weather.name}, {weather.sys.country}</h2>
+                    <span className="date">{dateBuilder(new Date())}</span>
+                  </div>
+                </div>
+                <div className="cols weather">
+                  <div className="col icons">
+                    <img src="http://openweathermap.org/img/wn/02n@2x.png"/>
+                  </div>
+                  <div className="col detail">
+                    <h3 className="temp">{Math.round(weather.main.temp)}°C</h3>
+                  </div>
+                </div>
+                <div className="cols desc">
+                  <div className="col">
+                    <h4 className="weathernow">{weather.weather[0].main}</h4>
+                  </div>
+                </div>
+                <div className="cols extra">
+                  <div className="col">
+                    <span>Humidity: 63%</span>
+                  </div>
+                  <div className="col">
+                    <span>Visibility: 10km</span>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="cols location">
-              <div className="col">
-                <h2 className="currentlocation">{weather.name}, {weather.sys.country}</h2>
-                <span className="date">{dateBuilder(new Date())}</span>
-              </div>
-            </div>
-            <div className="cols weather">
-              <div className="col icons">
-                <img src="http://openweathermap.org/img/wn/02n@2x.png"/>
-              </div>
-              <div className="col detail">
-                <h3 className="temp">{Math.round(wheather.main.temp)}°C</h3>
-              </div>
-            </div>
-            <div className="cols desc">
-              <div className="col">
-                <h4 className="weathernow">{weather.weather[0].main}</h4>
-              </div>
-            </div>
-            <div className="cols extra">
-              <div className="col">
-                <span>Humidity: 63%</span>
-              </div>
-              <div className="col">
-                <span>Visibility: 10km</span>
-              </div>
-            </div>
+          ) : ('')}
           </div>
         </div>
       </div>
