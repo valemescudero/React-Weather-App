@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.clear{
+  background: rgb(115,186,225);
+  background: linear-gradient(0deg, rgba(115,186,225,1) 0%, rgba(81,164,219,1) 100%);
+}
+.cloudy{
+  background: rgb(237,207,196);
+  background: linear-gradient(0deg, rgba(237,207,196,1) 0%, rgba(122,144,170,1) 100%);
+}
+.drizzle{
+  background: rgb(184,198,205);
+  background: linear-gradient(0deg, rgba(184,198,205,1) 0%, rgba(105,141,158,1) 100%);
+}
+.haze{
+  background: rgb(139,148,153);
+  background: linear-gradient(0deg, rgba(139,148,153,1) 0%, rgba(226,222,219,1) 100%);
+}
+.mist{
+  background: rgb(189,192,199);
+  background: linear-gradient(0deg, rgba(189,192,199,1) 0%, rgba(123,121,136,1) 100%);
+}
+.rain{
+  background: rgb(149,175,215);
+background: linear-gradient(0deg, rgba(149,175,215,1) 0%, rgba(85,101,120,1) 100%);
+}
+.sand{
+  background: rgb(219,165,96);
+  background: linear-gradient(0deg, rgba(219,165,96,1) 0%, rgba(178,114,58,1) 100%);
+}
+.smoke{
+  background: rgb(192,192,192);
+background: linear-gradient(0deg, rgba(192,192,192,1) 0%, rgba(83,80,80,1) 100%);
+}
+.snow{
+  background: rgb(225,232,237);
+  background: linear-gradient(0deg, rgba(225,232,237,1) 0%, rgba(204,214,222,1) 100%);
+}
+.squall{
+  background: rgb(124,133,150);
+  background: linear-gradient(93deg, rgba(124,133,150,1) 0%, rgba(157,171,182,1) 77%);
+}
+.thunder{
+  background: rgb(93,94,144);
+  background: linear-gradient(0deg, rgba(93,94,144,1) 0%, rgba(188,141,184,1) 100%);
+}
+.tornado{
+  background: rgb(178,148,126);
+  background: linear-gradient(0deg, rgba(178,148,126,1) 0%, rgba(52,51,59,1) 100%);
+}
+
+body {
+  font-size: 14px;
+ 	font-family: 'Montserrat', sans-serif;
+  font-weight: light;
+}
+#background{
+  transition: 1s ease-out!important;
+}
+#wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  backdrop-filter: blur(5px);
+}
+.container{
+  width: 350px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);;
+  border-radius: 5px;
+  margin: 2%;
+  box-shadow: 0 8px 6px -11px black;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cols{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-content: center;
+  text-align: center;
+  margin: 4%;
+  width: 100%;
+}
+.col {
+  width: 50%;
+  text-align: center;
+  margin: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+input, button{
+  height: 40px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  font-size: 1em !important;
+  transition: 1s ease-out!important;
+  color: white !important;
+  font-weight: 300 !important;
+}
+input{
+  background: rgba(255, 255, 255, 0) !important;
+  -webkit-box-shadow:inset 0 0 1px #000;
+       -moz-box-shadow:inset 0 0 1px #000;
+            box-shadow:inset 0 0 1px #000;
+}
+input:hover{
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+input:focus{
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  -webkit-box-shadow:inset 0 0 1px #000 !important;
+  -moz-box-shadow:inset 0 0 1px #000 !important;
+  box-shadow:inset 0 0 1px #000 !important;
+}
+input::placeholder { 
+  font-weight: 300 !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+input:focus::placeholder {
+  color: transparent !important;
+}
+button{
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+button:hover{
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+button:focus{
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: none !important;
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+.date{
+  font-weight: 300;
+}
+.location{
+  border-bottom: 1px solid rgba(250, 250, 250, 0.3);
+}
+.location span{
+  margin-bottom: 1.5em;
+}
+.extra{
+  margin-bottom: 1.5em;
+}
+h2{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+h3{
+  font-size: 3.5em;
+}
+h4{
+  font-size: 2em;
+  margin-top: -0.5em;
+  text-transform: uppercase;
+}
+.help{
+  font-size: 0.8em;
+  margin-top: -1em;
+  margin-bottom: -1em;
+  justify-content: flex-start;
+  color:  rgba(255, 255, 255, 0.8);
+}
