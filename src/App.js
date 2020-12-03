@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 
 const api = {
-  key: "a1edc614ced52b288047bd29678e4408",
+  key: "6df449730eb38fbb068024c1b2c4e939",
   base: "http://api.openweathermap.org/data/2.5/"
 }
 
@@ -77,7 +77,7 @@ function App() {
                 </div>
                 <div className="cols weather">
                   <div className="col icons">
-                    <img src="http://openweathermap.org/img/wn/02n@2x.png"/>
+                    <img className="icon" src={`http://openweathermap.org/img/wn/`+weather.weather[0].icon+`@2x.png`}/>
                   </div>
                   <div className="col detail">
                     <h3 className="temp">{Math.round(weather.main.temp)}°C</h3>
@@ -85,15 +85,15 @@ function App() {
                 </div>
                 <div className="cols desc">
                   <div className="col">
-                    <h4 className="weathernow">{weather.weather[0].main}</h4>
+                    <h4 className="weathernow">{weather.weather[0].description}</h4>
                   </div>
                 </div>
                 <div className="cols extra">
                   <div className="col">
-                    <span>Humidity: 63%</span>
+                    <span>Humidity: {weather.main.humidity}%</span>
                   </div>
                   <div className="col">
-                    <span>Visibility: 10km</span>
+                    <span>Visibility: {Math.round(weather.visibility/1000)}km</span>
                   </div>
                 </div>
               </div>

@@ -21,7 +21,7 @@
   background: rgb(139,148,153);
   background: linear-gradient(0deg, rgba(139,148,153,1) 0%, rgba(226,222,219,1) 100%);
 }
-.mist{
+.mist, .fog{
   background: rgb(189,192,199);
   background: linear-gradient(0deg, rgba(189,192,199,1) 0%, rgba(123,121,136,1) 100%);
 }
