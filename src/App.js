@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 
 const api = {
-  base: "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/"
+  base: "http://api.openweathermap.org/data/2.5/"
 }
 
 function App() {
