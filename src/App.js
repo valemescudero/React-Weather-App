@@ -12,8 +12,8 @@ function App() {
 
 
   const search_enter = evt =>{
-    if (evt.key === "Enter") {
-    search(query);
+    if (evt.key === "Enter") {() => {
+    search("Buenos Aires");
   }, [])
     }
   }
