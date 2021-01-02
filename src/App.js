@@ -19,6 +19,9 @@ function App() {
         });
     }
   
+  const search_click = (query) => {
+    search(query);
+  }
 
   const search_enter = evt =>{
     if (evt.key === "Enter") {
@@ -64,7 +67,7 @@ function App() {
                     onKeyPress={search_enter}
                     />
                   <div className="input-group-append">
-                    <button onClick="search" className="btn" type="button" id="button-addon2">Search</button>
+                    <button onClick={search_click} className="btn" type="button" id="button-addon2">Search</button>
                   </div>
                 </div>
               </div>
