@@ -11,7 +11,7 @@ function App() {
   const [weather, setWeather] = useState({});
   
   const search = (city) => {
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=6df449730eb38fbb068024c1b2c4e939`)
+      fetch(`${api.base}weather?q=${city}&units=metric&APPID=6df449730eb38fbb068024c1b2c4e939`)
         .then(res => res.json())
         .then(result => {
           setQuery('');
