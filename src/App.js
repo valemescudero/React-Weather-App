@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import './App.css';
 
 const api = {
@@ -11,16 +11,31 @@ function App() {
   const [weather, setWeather] = useState({});
 
 
-  const search = evt =>{
+  const search_enter = evt =>{
     if (evt.key === "Enter") {
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=6df449730eb38fbb068024c1b2c4e939`)
-        .then(res => res.json())
-        .then(result => {
-          setQuery('');
-          setWeather(result);
-        });
+    search(query);
+  }, [])
     }
   }
+  
+  const search = (city) => {
+    axios
+      .get(
+        `${apiKeys.base}weather?q=${
+          city != "[object Object]" ? city : query
+        }&units=metric&APPID=${apiKeys.key}`
+      )
+      .then((response) => {
+        setWeather(response.data);
+        setQuery("");
+      })
+      .catch(function (error) {
+        console.log(error);
+        setWeather("");
+        setQuery("");
+        setError({ message: "Not Found", query: query });
+      });
+  };
 
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -34,6 +49,10 @@ function App() {
     return `${day} ${date} ${month} ${year}`
   }
 
+
+  useEffect(() => {
+    search("Buenos Aires");
+  }, []);
 
   return (
     <div className="App">
@@ -51,7 +70,7 @@ function App() {
                     placeholder="Enter city..."
                     aria-label=""
                     aria-describedby="button-addon2"
-                    onChange={e => setQuery(e.target.value)}
+                    onChange={(e) => setQuery(e.target.value)}
                     value={query}
                     onKeyPress={search}
                     />
