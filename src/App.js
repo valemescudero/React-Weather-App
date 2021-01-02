@@ -11,23 +11,13 @@ function App() {
   const [weather, setWeather] = useState({});
   
   const search = (city) => {
-    axios
-      .get(
-        `${apiKeys.base}weather?q=${
-          city != "[object Object]" ? city : query
-        }&units=metric&APPID=${apiKeys.key}`
-      )
-      .then((response) => {
-        setWeather(response.data);
-        setQuery("");
-      })
-      .catch(function (error) {
-        console.log(error);
-        setWeather("");
-        setQuery("");
-        setError({ message: "Not Found", query: query });
-      });
-  };
+      fetch(`${api.base}weather?q=${query}&units=metric&APPID=6df449730eb38fbb068024c1b2c4e939`)
+        .then(res => res.json())
+        .then(result => {
+          setQuery('');
+          setWeather(result);
+        });
+    }
   
 
   const search_enter = evt =>{
