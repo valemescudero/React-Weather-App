@@ -19,7 +19,7 @@ function App() {
         });
     }
   
-  const search_click = (query) => {
+  const search_click = () => {
     search(query);
   }
 
