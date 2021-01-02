@@ -9,14 +9,6 @@ function App() {
 
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
-
-
-  const search_enter = evt =>{
-    if (evt.key === "Enter") {() => {
-    search("Buenos Aires");
-  }, [])
-    }
-  }
   
   const search = (city) => {
     axios
@@ -36,6 +28,13 @@ function App() {
         setError({ message: "Not Found", query: query });
       });
   };
+  
+
+  const search_enter = evt =>{
+    if (evt.key === "Enter") {
+    search("Buenos Aires");
+    }
+  }
 
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -72,10 +71,10 @@ function App() {
                     aria-describedby="button-addon2"
                     onChange={(e) => setQuery(e.target.value)}
                     value={query}
-                    onKeyPress={search}
+                    onKeyPress={search_enter}
                     />
                   <div className="input-group-append">
-                    <button className="btn" type="button" id="button-addon2">Search</button>
+                    <button onClick="search" className="btn" type="button" id="button-addon2">Search</button>
                   </div>
                 </div>
               </div>
