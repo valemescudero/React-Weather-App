@@ -102,7 +102,6 @@ body {
 .col {
   width: 50%;
   text-align: center;
-  margin: 2%;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
