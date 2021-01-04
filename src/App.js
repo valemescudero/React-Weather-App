@@ -15,6 +15,7 @@ function App() {
         .then(res => res.json())
         .then(result => {
           setQuery('');
+          console.log(result);
           setWeather(result);
         });
     }
